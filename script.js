@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 const operadores = ["+", "-", "*", "/"];
+const trocarCor = document.getElementById('trocaCor');
 
 function anexar(input) {
   let inputText = display.value;
@@ -38,3 +39,8 @@ function calcular() {
     return 0;
   }
 }
+
+trocarCor.addEventListener('click', () => {
+  console.log("teste");
+  document.body.classList.toggle('dark-theme');
+})
