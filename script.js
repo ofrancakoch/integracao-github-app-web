@@ -1,18 +1,40 @@
-// Estrutura inicial para as funções matemáticas
-// Cada integrante implementará a lógica da sua respectiva operação na sua branch
+const display = document.getElementById("display");
+const operadores = ["+", "-", "*", "/"];
 
-function somar(a, b) {
-    // A ser implementado
+function anexar(input) {
+  let inputText = display.value;
+  let ultimo = inputText.slice(-1);
+
+  if (operadores.includes(ultimo) && operadores.includes(input)) {
+    display.value = inputText.substring(0, inputText.length - 1);
+    display.value += input;
+    display.scrollLeft = display.scrollWidth;
+  } else if (display.value === "Erro") {
+    return 0;
+  } else {
+    display.value += input;
+    display.scrollLeft = display.scrollWidth;
+  }
 }
 
-function subtrair(a, b) {
-    // A ser implementado
+function apagar() {
+  let inputText = display.value;
+  if (display.value == "Erro") {
+    return 0;
+  } else {
+    display.value = inputText.substring(0, inputText.length - 1);
+  }
 }
 
-function multiplicar(a, b) {
-    // A ser implementado
+function limpar() {
+  display.value = "";
 }
 
-function dividir(a, b) {
-    // A ser implementado
+function calcular() {
+  try {
+    display.value = Function("return " + display.value)();
+  } catch {
+    display.value = "Erro";
+    return 0;
+  }
 }
