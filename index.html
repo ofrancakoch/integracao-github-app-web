@@ -1,16 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora do Grupo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="calculator-container">
-        <h1>Calculadora</h1>
-    </main>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculadora">
+        <input id="display" readonly></input>
+        <div class="botoes">
+          <div class="btn-numeros">
+            <button class="btn" onclick="anexar('7')">7</button>
+            <button class="btn" onclick="anexar('8')">8</button>
+            <button class="btn" onclick="anexar('9')">9</button>
 
-    <script src="script.js"></script>
-</body>
+            <button class="btn" onclick="anexar('4')">4</button>
+            <button class="btn" onclick="anexar('5')">5</button>
+            <button class="btn" onclick="anexar('6')">6</button>
+
+            <button class="btn" onclick="anexar('1')">1</button>
+            <button class="btn" onclick="anexar('2')">2</button>
+            <button class="btn" onclick="anexar('3')">3</button>
+
+            <button id="btn-fantasma"></button>
+            <button class="btn" onclick="anexar('0')">0</button>
+            <button class="btn" onclick="anexar('.')">,</button>
+          </div>
+          <div class="funcoes">
+            <div class="manipuladores">
+              <button class="btn" onclick="apagar()">⭠</button>
+              <button class="btn" onclick="limpar()">C</button> 
+            </div>
+            <div class="operadores">
+              <button class="btn" onclick="anexar('+')">+</button>
+              <button class="btn" onclick="anexar('-')">-</button>
+              <button class="btn" onclick="anexar('*')">*</button>
+              <button class="btn" onclick="anexar('/')">/</button>
+            </div>
+            <button class="btn" onclick="calcular()">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
